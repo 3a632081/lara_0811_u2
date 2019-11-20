@@ -18,3 +18,12 @@ Route::get('say/{name?}', ['as'=> 'hello.index',function ($name='everybody') {
 Route::get ('/', function(){
     return view('welcome');
 });
+
+Route::get('dashboard',function(){
+    return'dashboard';
+});
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('dashboard',function(){
+        return'admin dashboard';
+    });
+});
