@@ -15,9 +15,9 @@ Route::get('say/{name?}', ['as'=> 'hello.index',function ($name='everybody') {
     return 'hello ,'.$name ;
 }]);
 
-Route::get ('/', function(){
-    return view('welcome');
-});
+Route::get('/',['as'=>'home.index','uses'=>
+    'HomeController@index'
+]);
 
 Route::get('dashboard',function(){
     return'dashboard';
